@@ -10,14 +10,14 @@
 
 <body>
     <div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="cloud cloud3"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
 
     <div class="container">
-<h1 class="title">
-    <span>⛅</span>
-    Weather App
-</h1>
+        <h1 class="title">
+            <span>⛅</span>
+            Weather App
+        </h1>
 
         <div class="search-box">
             <input type="text" id="cityInput" placeholder="Enter city name">
@@ -27,31 +27,27 @@
             </button>
         </div>
 
-        <div id="loading">
+        <div id="loading" class="hidden">
             Loading...
         </div>
 
-        <div id="error">
+        <div id="error" class="hidden">
             City not found!
         </div>
+
+
 
         <div class="weather-card">
 
             <h2 id="cityName">City Name</h2>
-          <div class="icon-wrapper">
-    <img
-        id="weatherIcon"
-        src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
-        alt="Weather Icon"
-    >
-</div>
-           
+
+            <div class="icon-wrapper">
+                <img id="weatherIcon" src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" alt="Weather Icon">
+            </div>
 
             <h3 id="temperature">0°C</h3>
 
-            <p id="description">
-                Weather Condition
-            </p>
+            <p id="description">Weather Condition</p>
 
             <div class="weather-details">
 
@@ -68,9 +64,7 @@
             </div>
 
         </div>
-
     </div>
-
     <script src="script.js"></script>
 
 </body>
