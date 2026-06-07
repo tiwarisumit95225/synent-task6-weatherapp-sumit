@@ -174,8 +174,6 @@ body::after {
 
 #loading,
 #error {
-    display: none;
-
     margin-bottom: 15px;
 }
 
@@ -363,6 +361,23 @@ body::before,
 body::after{
     filter:blur(5px);
 }
+
+#error{
+    background:#ffe4e6;
+    color:#dc2626;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
 .hidden{
     display:none;
 }

@@ -28,18 +28,18 @@
         </div>
 
         <div id="loading" class="hidden">
-            Loading...
+            <div class="loader"></div>
+            <p>Fetching weather data...</p>
         </div>
 
         <div id="error" class="hidden">
-            City not found!
+            ❌ City not found
         </div>
 
+        <div class="weather-card hidden">
 
+           <h2 id="cityName">Search a City</h2>
 
-        <div class="weather-card">
-
-            <h2 id="cityName">City Name</h2>
 
             <div class="icon-wrapper">
                 <img id="weatherIcon" src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png" alt="Weather Icon">
@@ -47,7 +47,8 @@
 
             <h3 id="temperature">0°C</h3>
 
-            <p id="description">Weather Condition</p>
+           
+<p id="description">Enter a city name to get weather information</p>
 
             <div class="weather-details">
 

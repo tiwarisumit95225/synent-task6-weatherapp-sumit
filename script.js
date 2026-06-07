@@ -9,8 +9,14 @@ const description = document.getElementById("description");
 const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const weatherIcon = document.getElementById("weatherIcon");
+const loading = document.getElementById("loading");
+const error = document.getElementById("error");
+const weatherCard = document.querySelector(".weather-card");
 
 async function getWeather(city) {
+
+    loading.classList.remove("hidden");
+    error.classList.add("hidden");
 
     try {
 
@@ -20,10 +26,22 @@ async function getWeather(city) {
 
         const data = await response.json();
 
-     if (!response.ok) {
-    alert("City not found!");
-    return;
-}
+        loading.classList.add("hidden");
+
+        if (!response.ok) {
+
+            weatherCard.classList.add("hidden");
+
+            error.textContent = "❌ Invalid city name";
+
+            error.classList.remove("hidden");
+
+            return;
+        }
+
+
+        weatherCard.classList.remove("hidden");
+
         cityName.textContent = data.name;
 
         temperature.textContent =
@@ -36,7 +54,7 @@ async function getWeather(city) {
             `${data.main.humidity}%`;
 
         wind.textContent =
-`${Math.round(data.wind.speed * 3.6)} km/h`;
+            `${Math.round(data.wind.speed * 3.6)} km/h`;
 
         const iconCode = data.weather[0].icon;
 
@@ -44,11 +62,18 @@ async function getWeather(city) {
             `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
     }
-    catch (error) {
+    catch (err) {
 
-        alert("Something went wrong!");
+        loading.classList.add("hidden");
 
-        console.log(error);
+        weatherCard.classList.add("hidden");
+
+        error.textContent =
+            "❌ Invalid city name. Please try again.";
+
+        error.classList.remove("hidden");
+
+        console.log(err);
     }
 }
 
@@ -57,6 +82,24 @@ searchBtn.addEventListener("click", () => {
     const city = cityInput.value.trim();
 
     if (city !== "") {
+
         getWeather(city);
+
+        cityInput.value = "";
     }
 });
+cityInput.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+
+        const city = cityInput.value.trim();
+
+        if (city !== "") {
+
+            getWeather(city);
+
+            cityInput.value = "";
+        }
+    }
+});
+getWeather("Bhopal");
