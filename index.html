@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="cloud cloud3"></div>
 
     <div class="container">
-
-        <h1>Weather App</h1>
+<h1 class="title">
+    <span>⛅</span>
+    Weather App
+</h1>
 
         <div class="search-box">
-            <input
-                type="text"
-                id="cityInput"
-                placeholder="Enter city name"
-            >
+            <input type="text" id="cityInput" placeholder="Enter city name">
 
             <button id="searchBtn">
                 Search
@@ -35,12 +38,14 @@
         <div class="weather-card">
 
             <h2 id="cityName">City Name</h2>
-
-            <img
-                id="weatherIcon"
-                src=""
-                alt="Weather Icon"
-            >
+          <div class="icon-wrapper">
+    <img
+        id="weatherIcon"
+        src="https://cdn-icons-png.flaticon.com/512/1779/1779940.png"
+        alt="Weather Icon"
+    >
+</div>
+           
 
             <h3 id="temperature">0°C</h3>
 
@@ -48,15 +53,19 @@
                 Weather Condition
             </p>
 
-            <p>
-                Humidity:
-                <span id="humidity">0%</span>
-            </p>
+            <div class="weather-details">
 
-            <p>
-                Wind:
-                <span id="wind">0 km/h</span>
-            </p>
+                <div class="detail-card">
+                    <h4>💧 Humidity</h4>
+                    <span id="humidity">0%</span>
+                </div>
+
+                <div class="detail-card">
+                    <h4>🌬️ Wind</h4>
+                    <span id="wind">0 km/h</span>
+                </div>
+
+            </div>
 
         </div>
 
@@ -65,4 +74,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
